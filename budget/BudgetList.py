@@ -1,5 +1,5 @@
-from.import Expense
 import matplotlib.pyplot as plt
+from.import Expense
 
 class BudgetList():
     def __init__(self, budget):
@@ -49,7 +49,7 @@ def main():
     labels = ['Expenses','Overages','Budget']
     values = [myBudgetList.sum_expenses, myBudgetList.sum_overages, myBudgetList.budget]
 
-    ax.bar(labels,values,color=('green','red','blue'))
+    ax.bar(labels,values,color=['green','red','blue'])
     ax.set_title('Your total expenses vs. total budget')
     plt.show()
 
