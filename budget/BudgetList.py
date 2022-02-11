@@ -9,20 +9,20 @@ class BudgetList():
         self.sum_overages = 0
         self.overages = []
 
+    def __len__(self):
+        return (len(self.expenses)+len(self.overages))
+
     def append(self, item):
-        if self.sum_expenses + item < self.budget:
+        if (self.sum_expenses + item < self.budget):
             self.expenses.append(item)
             self.sum_expenses += item
         else:
             self.overages.append(item)
             self.sum_overages += item
 
-    def __len__(self):
-        return len(self.expenses)+len(self.overages)
-
     def __iter__(self):
         self.iter_e = iter(self.expenses)
-        self.iter_o = iter(self.expenses)
+        self.iter_o = iter(self.overages)
         return self
 
     def __next__(self):
